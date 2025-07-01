@@ -44,3 +44,13 @@ sentence = """Monticello wasn't designated as UNESCO world Heritage Site until 1
 tokenizer = TreebankWordTokenizer()
 result = tokenizer.tokenize(sentence)
 print(f"result: {result}")
+
+from nltk.tokenize.casual import casual_tokenize
+
+message = """RT @TJMonticello Best day everrrrrrrrr at Monticello. Awesommmmmmmmmmmmmmmmmeeeeeeeeeeeeeeeeeee day :*)"""
+
+tokens1 = casual_tokenize(message)
+print(f"tokens1: {tokens1}")
+
+tokens2 = casual_tokenize(message, reduce_len=True, strip_handles=True)
+print(f"tokens2: {tokens2}")
